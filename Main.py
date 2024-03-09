@@ -96,6 +96,15 @@ def run_autoinstallTR_script(script_name="installer.py"):
         # Gestisce l'errore nel caso in cui lo script termini con un errore
         print(f"Error executing script: {e.stderr}")
 
+def run_cudnnpytorch_script(script_name="cudnn+pytorch.py"):
+    try:
+        # Esegue lo script Python specificato
+        result = subprocess.run(['python', script_name], check=True, text=True, capture_output=True)
+        print(f"Script executed successfully: {result.stdout}")
+    except subprocess.CalledProcessError as e:
+        # Gestisce l'errore nel caso in cui lo script termini con un errore
+        print(f"Error executing script: {e.stderr}")
+
 
 # Esempio di utilizzo della funzione
 uninstall_tensorrt_related_libraries()
@@ -103,3 +112,4 @@ remove_tensorrt_directory_if_exists()
 extract_tensorrt_package(cuda_base_path, seven_zip_path)
 run_autoinstallTR_script()
 remove_tensorrt_directory_if_exists()
+run_cudnnpytorch_script()
