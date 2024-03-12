@@ -114,8 +114,29 @@ def run_cudnn_script(script_name="acudnn.py"):
         # Gestisce l'errore nel caso in cui lo script termini con un errore
         print(f"Error executing script: {e.stderr}")
 
+def run_vccredist_script(script_name="installvccredist.py"):
+    try:
+        # Esegue lo script Python specificato
+        result = subprocess.run(['python', script_name], check=True, text=True, capture_output=True)
+        print(f"Script executed successfully: {result.stdout}")
+    except subprocess.CalledProcessError as e:
+        # Gestisce l'errore nel caso in cui lo script termini con un errore
+        print(f"Error executing script: {e.stderr}")
+
+def run_cuda_script(script_name="installcuda.py"):
+    try:
+        # Esegue lo script Python specificato
+        result = subprocess.run(['python', script_name], check=True, text=True, capture_output=True)
+        print(f"Script executed successfully: {result.stdout}")
+    except subprocess.CalledProcessError as e:
+        # Gestisce l'errore nel caso in cui lo script termini con un errore
+        print(f"Error executing script: {e.stderr}")
+
+
 
 # Esempio di utilizzo della funzione
+run_vccredist_script()
+run_cuda_script()
 run_cudnn_script()
 run_pytorch_script()
 uninstall_tensorrt_related_libraries()
