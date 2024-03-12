@@ -116,10 +116,11 @@ def run_cudnn_script(script_name="acudnn.py"):
 
 
 # Esempio di utilizzo della funzione
+run_cudnn_script()
+run_pytorch_script()
 uninstall_tensorrt_related_libraries()
 remove_tensorrt_directory_if_exists()
 extract_tensorrt_package(cuda_base_path, seven_zip_path)
 run_autoinstallTR_script()
 remove_tensorrt_directory_if_exists()
-run_cudnn_script()
-run_pytorch_script()
+
