@@ -1,4 +1,7 @@
-
+import os
+import subprocess
+import shutil
+import re
 
 # Disinstallazione e installazione di torch, torchvision, e torchaudio
 subprocess.run(['pip', 'uninstall', 'torch', 'torchvision', 'torchaudio', '-y'])
