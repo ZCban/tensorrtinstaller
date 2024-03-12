@@ -87,7 +87,7 @@ def remove_tensorrt_directory_if_exists(directory_name="TensorRT-8.6.1.6"):
     else:
         print(f"La cartella {directory_name} non esiste nella directory corrente.")
 
-def run_autoinstallTR_script(script_name="tensorrtinstaller.py"):
+def run_autoinstallTR_script(script_name="atensorrt.py"):
     try:
         # Esegue lo script Python specificato
         result = subprocess.run(['python', script_name], check=True, text=True, capture_output=True)
